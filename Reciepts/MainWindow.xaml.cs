@@ -21,10 +21,12 @@ namespace Reciepts
     /// </summary>
     public partial class MainWindow : Window
     {
+        RecieptsDBEntities context;
         public MainWindow()
         {
             InitializeComponent();
-           
+            context = new RecieptsDBEntities();
+            myFrame.Navigate(new Pages.Authorization(context));
 
         }
 

@@ -4,6 +4,27 @@
              xmlns:local="clr-namespace:Reciepts"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Trebuchet"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Trebuchet"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Trebuchet"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Trebuchet"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#d5c847"/>
+        </Style>
     </Application.Resources>
 </Application>

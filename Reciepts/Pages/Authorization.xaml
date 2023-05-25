@@ -1,0 +1,39 @@
+﻿<Page x:Class="Reciepts.Pages.Authorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Reciepts.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Authorization"
+      Background="#fed7c1">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="1" Grid.Row="0" Margin="10" Source="/Images/nyam-nyam.png" />
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontSize="30" VerticalAlignment="Center" Foreground="#d5c847">Авторизация</TextBlock>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <TextBlock>Логин</TextBlock>
+            <TextBox Name="loginBox"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <TextBlock>Пароль</TextBlock>
+            <PasswordBox Name="passwordBox"/>
+        </StackPanel>
+        <Button Grid.Column="1" Grid.Row="4" Margin="70,10,70,10" Click="EnterClick" Name="buttonEnter">Войти</Button>
+        <Button Grid.Column="2" Grid.Row="5" Margin="30,10,30,10">Регистрация</Button>
+    </Grid>
+</Page>
