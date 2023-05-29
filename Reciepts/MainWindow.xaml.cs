@@ -28,6 +28,9 @@ namespace Reciepts
             context = new RecieptsDBEntities();
             myFrame.Navigate(new Pages.Authorization(context));
 
+            
+            
+
         }
 
         //public void DownloadPictures()

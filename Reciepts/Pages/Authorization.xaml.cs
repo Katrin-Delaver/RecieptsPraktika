@@ -54,6 +54,8 @@ namespace Reciepts.Pages
                 {
                     MessageBox.Show("Вы успешно авторизованы!!!");
                     countClick = 0;
+                    user.DateOfLastLog = DateTime.Now;
+                    context.SaveChanges();
                 }
                 else
                 {
@@ -74,6 +76,13 @@ namespace Reciepts.Pages
                     timer.Start();
                 }
             }
+        }
+
+        private void RegistrationClick(object sender, RoutedEventArgs e)
+        {
+            //Registration regWindow = new Registration(context);
+            //regWindow.Show();
+            NavigationService.Navigate(new RegPage());
         }
     }
 }
