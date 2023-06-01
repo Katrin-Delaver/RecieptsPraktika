@@ -60,10 +60,9 @@ namespace Reciepts.Pages
                 else
                 {
                     MessageBox.Show("Вы введи неверный пароль!!!");
-                    if (countClick==3)
+                    if (countClick>=3)
                     {
-                        buttonEnter.IsEnabled = false;
-                        timer.Start();
+                        remeberBtn.Visibility = Visibility.Visible;
                     }
                 }
             }
@@ -72,8 +71,7 @@ namespace Reciepts.Pages
                 MessageBox.Show("Такого пользователя не существует!!!");
                 if (countClick == 3)
                 {
-                    buttonEnter.IsEnabled = false;
-                    timer.Start();
+                    remeberBtn.Visibility = Visibility.Visible;
                 }
             }
         }
@@ -83,6 +81,12 @@ namespace Reciepts.Pages
             //Registration regWindow = new Registration(context);
             //regWindow.Show();
             NavigationService.Navigate(new RegPage());
+        }
+
+        private void RememberPassClick(object sender, RoutedEventArgs e)
+        {
+            User us = context.User.Find(loginBox.Text);
+            NavigationService.Navigate(new RememberPassPage(us));
         }
     }
 }
