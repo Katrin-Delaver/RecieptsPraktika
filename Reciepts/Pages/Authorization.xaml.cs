@@ -52,10 +52,11 @@ namespace Reciepts.Pages
             {
                 if (user.Password.Equals(pass))
                 {
-                    MessageBox.Show("Вы успешно авторизованы!!!");
+                    
                     countClick = 0;
                     user.DateOfLastLog = DateTime.Now;
                     context.SaveChanges();
+                    NavigationService.Navigate(new MainMenuPage(context));
                 }
                 else
                 {
