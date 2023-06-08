@@ -26,7 +26,7 @@ namespace Reciepts
         {
             InitializeComponent();
             context = new RecieptsDBEntities();
-            myFrame.Navigate(new Pages.Authorization(context));
+            myFrame.Navigate(new Pages.Authorization(context, this));
 
             
             

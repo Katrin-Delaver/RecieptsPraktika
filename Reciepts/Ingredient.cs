@@ -26,7 +26,12 @@ namespace Reciepts
         public double CostForCount { get; set; }
         public int UnitId { get; set; }
         public double AvailableCount { get; set; }
-    
+
+        public string CostToDataGrid { get {
+                return $"{Cost} руб. за {CostForCount} {Unit.Name}";
+            } }
+
+
         public virtual Unit Unit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IngredientOfStage> IngredientOfStage { get; set; }

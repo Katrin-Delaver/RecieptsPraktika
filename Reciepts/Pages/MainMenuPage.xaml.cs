@@ -20,9 +20,23 @@ namespace Reciepts.Pages
     /// </summary>
     public partial class MainMenuPage : Page
     {
-        public MainMenuPage(RecieptsDBEntities context)
+        Window Window;
+        RecieptsDBEntities _context;
+        public MainMenuPage(RecieptsDBEntities context, Window window)
         {
             InitializeComponent();
+            Window = window;
+            _context = context;
+        }
+
+        private void EscapeClick(object sender, RoutedEventArgs e)
+        {
+            Window.Close();
+        }
+
+        private void IngredientClick(object sender, RoutedEventArgs e)
+        {
+            frameToBasePages.Navigate(new IngredientPage(_context));
         }
     }
 }

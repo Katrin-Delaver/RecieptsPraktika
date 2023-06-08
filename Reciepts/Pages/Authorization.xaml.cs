@@ -23,10 +23,12 @@ namespace Reciepts.Pages
     {
         RecieptsDBEntities context;
         DispatcherTimer timer;
-        public Authorization(RecieptsDBEntities cont)
+        Window window;
+        public Authorization(RecieptsDBEntities cont, Window w)
         {
             InitializeComponent();
             context = cont;
+            window = w;
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Tick += Timer_Tick;
@@ -56,7 +58,7 @@ namespace Reciepts.Pages
                     countClick = 0;
                     user.DateOfLastLog = DateTime.Now;
                     context.SaveChanges();
-                    NavigationService.Navigate(new MainMenuPage(context));
+                    NavigationService.Navigate(new MainMenuPage(context, window ));
                 }
                 else
                 {
