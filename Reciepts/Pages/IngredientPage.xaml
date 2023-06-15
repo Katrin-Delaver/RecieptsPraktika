@@ -29,6 +29,12 @@
         <TextBlock x:Name="countIng" Grid.Row="2"/>
         <TextBlock x:Name="sumIng" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Right"/>
         <DataGrid Name="ingredientData" AutoGenerateColumns="False" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="5">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Click="EditClick">Редактировать</MenuItem>
+                    <MenuItem>Удалить</MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Name}" FontSize="18"/>
                 <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding CostToDataGrid}" FontSize="18"/>

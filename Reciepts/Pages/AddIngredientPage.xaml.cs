@@ -24,7 +24,11 @@ namespace Reciepts.Pages
     /// Второе для редактирования привязывается в соответствующем конструкторе
     /// </summary>
     public partial class AddIngredientPage : Page
-    {
+    {     
+
+      
+
+
         RecieptsDBEntities context;
         Ingredient ingredient;
         /// <summary>
@@ -129,7 +133,7 @@ namespace Reciepts.Pages
                 //переход на страницу Ингредиенты
                 NavigationService.Navigate(new IngredientPage(context));
             }
-            catch(FormatException) //перейдет сюда, если исключение возникло на Convert.To...
+            catch (FormatException) //перейдет сюда, если исключение возникло на Convert.To...
             {
                 MessageBox.Show("Ошибка вводимых данных!");
             }
@@ -140,3 +144,4 @@ namespace Reciepts.Pages
         }
     }
 }
+

@@ -45,38 +45,39 @@ namespace Reciepts.Pages
         int countClick = 0;
         private void EnterClick(object sender, RoutedEventArgs e)
         {
-            countClick++;
-            string log = loginBox.Text;
-            string pass = passwordBox.Password;
-            User user = context.User.Find(log);
-            //User u = context.User.ToList().Find(x => x.age == 48);
-            if (user!=null)
-            {
-                if (user.Password.Equals(pass))
-                {
-                    
-                    countClick = 0;
-                    user.DateOfLastLog = DateTime.Now;
-                    context.SaveChanges();
-                    NavigationService.Navigate(new MainMenuPage(context, window ));
-                }
-                else
-                {
-                    MessageBox.Show("Вы введи неверный пароль!!!");
-                    if (countClick>=3)
-                    {
-                        remeberBtn.Visibility = Visibility.Visible;
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Такого пользователя не существует!!!");
-                if (countClick == 3)
-                {
-                    remeberBtn.Visibility = Visibility.Visible;
-                }
-            }
+            NavigationService.Navigate(new MainMenuPage(context, window));
+            //countClick++;
+            //string log = loginBox.Text;
+            //string pass = passwordBox.Password;
+            //User user = context.User.Find(log);
+            ////User u = context.User.ToList().Find(x => x.age == 48);
+            //if (user!=null)
+            //{
+            //    if (user.Password.Equals(pass))
+            //    {
+
+            //        countClick = 0;
+            //        user.DateOfLastLog = DateTime.Now;
+            //        context.SaveChanges();
+            //        NavigationService.Navigate(new MainMenuPage(context, window ));
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Вы введи неверный пароль!!!");
+            //        if (countClick>=3)
+            //        {
+            //            remeberBtn.Visibility = Visibility.Visible;
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Такого пользователя не существует!!!");
+            //    if (countClick == 3)
+            //    {
+            //        remeberBtn.Visibility = Visibility.Visible;
+            //    }
+            //}
         }
 
         private void RegistrationClick(object sender, RoutedEventArgs e)

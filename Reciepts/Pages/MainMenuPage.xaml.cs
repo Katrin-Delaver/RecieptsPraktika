@@ -20,6 +20,8 @@ namespace Reciepts.Pages
     /// </summary>
     public partial class MainMenuPage : Page
     {
+        //так как мы находимся на странице, мы не можем обратиться сразу к окну
+        //поэтому его получаем из предыдущей страницы
         Window Window;
         RecieptsDBEntities _context;
         public MainMenuPage(RecieptsDBEntities context, Window window)
@@ -28,15 +30,30 @@ namespace Reciepts.Pages
             Window = window;
             _context = context;
         }
-
+        /// <summary>
+        /// Клик по кнопке "Выход"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EscapeClick(object sender, RoutedEventArgs e)
         {
+            //закрытие окна
             Window.Close();
         }
+        /// <summary>
+        /// открытие страницы Ингредиенты
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void IngredientClick(object sender, RoutedEventArgs e)
         {
             frameToBasePages.Navigate(new IngredientPage(_context));
+        }
+
+        private void DishClick(object sender, RoutedEventArgs e)
+        {
+            frameToBasePages.Navigate(new DishPage(_context));
         }
     }
 }
